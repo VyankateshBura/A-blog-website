@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './components/Navbar/Navbar'
 import {BrowserRouter,Routes,Route,Link} from "react-router-dom";
-import {Home,About,Signin,Signup} from './pages'
+import {Home,About,Signin,Signup,Singlepost} from './pages'
 
 
 const App = () => {
@@ -14,6 +14,7 @@ const App = () => {
           <Route exact path='/about' element = {<About/>}/>
           <Route exact path='/signin' element = {<Signin/>}/>
           <Route exact path='/signup' element = {<Signup/>}/>
+          <Route exact path='/singlepost' element = {<Singlepost/>}/>
         </Routes>
       </BrowserRouter>
       

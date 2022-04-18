@@ -2,11 +2,16 @@ import React from 'react'
 import { Outlet, Link } from "react-router-dom";
 import { images } from '../../constants';
 import "./Navbar.scss";
+
+const hideit = ()=>{
+
+}
+
 const Navbar = () => {
   return (
     <div>
         {/* <h1>Hello, world!</h1>  */}
-        <nav className="navbar navbar-expand-lg navbar-light fixed-top border-bottom m-0 p-0" >
+        <nav className="navbar navbar-expand-lg navbar-light bg-white fixed-top border-bottom m-0 p-0" >
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">
                     <img src={images.logo} height = "50px" width = "50px" alt="V"/>
@@ -43,7 +48,7 @@ const Navbar = () => {
                     </ul>
                     <form className="d-flex " style = {{width:300}}>
                         <Link className="btn btn-primary btn-lg me-1" to="/signin" role="button">Sign in</Link>
-                        <Link className="btn btn-light btn-lg me-1" to="/signup" role="button">Sign up</Link>
+                        <Link className="btn btn-light btn-lg me-1" to="/signup" role="button" onClick={hideit}>Sign up</Link>
                     </form>
                 </div>
             </div>
