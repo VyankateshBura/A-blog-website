@@ -1,0 +1,70 @@
+.Write {
+    padding-top: 50px;
+  }
+  
+  .writeImg {
+    margin-left: 150px;
+    width: 70vw;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  .Writeform {
+    position: relative;
+  }
+  
+  .Writeformgroup {
+    margin-left: 150px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .writeIcon {
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .writeInput {
+    font-size: 30px;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 20px;
+    width: 70vw;
+  }
+  
+  .writeInput::placeholder {
+    color: rgb(189, 185, 185);
+    font-weight: 400;
+  }
+  
+  .writeInput:focus {
+    outline-style: none;
+  }
+  
+  .writeText {
+    width: 70vw;
+    height: 100vh;
+    font-family: inherit;
+    font-size: 20px;
+  }
+  
+  .submit {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    color: white;
+    background-color: rgb(23, 109, 163);
+    padding:10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }

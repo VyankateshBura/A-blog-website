@@ -6,7 +6,7 @@ import "./Navbar.scss";
 const hideit = ()=>{
 
 }
-
+let user = false;
 const Navbar = () => {
   return (
     <div>
@@ -47,8 +47,8 @@ const Navbar = () => {
                     </li>
                     </ul>
                     <form className="d-flex " style = {{width:300}}>
-                        <Link className="btn btn-primary btn-lg me-1" to="/signin" role="button">Sign in</Link>
-                        <Link className="btn btn-light btn-lg me-1" to="/signup" role="button" onClick={hideit}>Sign up</Link>
+                        <Link className="btn btn-primary btn-lg me-1" to="/signin" role="button">{user?"Sign out":"Sign in"}</Link>
+                        <Link className="btn btn-light btn-lg me-1" to="/signup" role="button" >{!user && "Sign up"}</Link>
                     </form>
                 </div>
             </div>
