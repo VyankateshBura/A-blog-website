@@ -18,8 +18,6 @@ app.use(cors());
 app.use(express.json());//Very much useful without this we can't communicate with the server in json
 
 
-
-
 //Uploading a file
 ;
 const storage = multer.diskStorage({
@@ -40,7 +38,7 @@ app.post("/api/v1/upload",upload.single("file"),(req,res)=>{
 })
 
 //Static files
-// app.use(express.static('../client'));
+// app.use(express.static('../Client'));
 
 app.use('/api/v1',task);
 

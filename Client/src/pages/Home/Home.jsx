@@ -1,14 +1,24 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useState} from 'react'
 import {images} from '../../constants'
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./Home.scss"
 import Posts from '../../components/Posts/Posts';
+import axios from 'axios'
+import { useLocation } from 'react-router-dom';
 
 const Home = () => {
+  const [posts, setPosts] = useState([]);
+  const {search} = useLocation();
+
+  const fetchposts = async()=>{
+    const {data} = await axios.get("http://localhost:5500/api/v1/post/getAllpost/"+search);
+    setPosts(data);      
+  }
   useEffect(() => {
     AOS.init();
-  }, [])
+    fetchposts();
+  }, [search])
   
 
   return (
@@ -37,11 +47,11 @@ const Home = () => {
     <section className='mx-5 Blog'>
         <div className="mx-5 px-5 py-2 bg-light" id="custom-cards"data-aos="zoom-in-right"data-aos-duration="1500">
           <h2 className="pb-2 border-bottom">Recent Blogs</h2>
-      
           <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-            <Posts image = {images.image2} title={"5 tips to make your website look awesome!"} date = {"Sun Jan 02 2022"}/>
-            <Posts image = {images.image3} title={"The complete react roadmap!"} date = {"Fri Apr 01 2022"}/>
-            <Posts image = {images.image4} title={"Advance git concepts you should know!"} date = {"Wed Mar 09 2022"}/>
+              {posts.map((p,index)=>(
+                console.log(index),
+                <Posts image = {images.image2} id = {p._id} key = {index} title={p.title} date = {new Date(p.createdAt).toDateString()}/>
+              ))}            
           </div>
         </div>
       </section>

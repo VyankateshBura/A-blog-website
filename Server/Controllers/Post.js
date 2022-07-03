@@ -52,7 +52,7 @@ const DeletePost = async(req,res)=>{
 //GET POST 
 const getPost = async(req,res)=>{
     try {
-        const user  = await User.findById(req.params.id);
+        const user  = await Post.findById(req.params.id);
         res.status(200).json(user);
     } catch (error) {
         res.status(500).json({msg:error})
@@ -75,7 +75,8 @@ const getAllPost = async(req,res)=>{
             }})
         }
         else{
-            posts = await Post.find();
+            posts = await Post.find({});
+            console.log("The post is called!");
         }
         res.status(200).json(posts);
     } catch (error) {

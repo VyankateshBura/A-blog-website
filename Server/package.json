@@ -23,7 +23,6 @@
     "mongoose": "^6.2.2",
     "multer": "^1.4.4"
   },
-  "proxy": "https://localhost:5500",
   "devDependencies": {
     "nodemon": "^2.0.15"
   }
