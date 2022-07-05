@@ -9,10 +9,6 @@ const PostSchema = mongoose.Schema({
         type:String,
         required:[true,"Please write something in the description"],
     },
-    photo:{
-        type:String,
-        required:false
-    },
     Username:{
         type:String,
         required:[true,"Please provide the username"]

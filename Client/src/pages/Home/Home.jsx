@@ -6,9 +6,11 @@ import "./Home.scss"
 import Posts from '../../components/Posts/Posts';
 import axios from 'axios'
 import { useLocation } from 'react-router-dom';
+import Loading from '../../components/Loading/Loading';
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
+  const [loading,setLoading] = useState(true)
   const {search} = useLocation();
 
   const fetchposts = async()=>{
@@ -18,10 +20,14 @@ const Home = () => {
   useEffect(() => {
     AOS.init();
     fetchposts();
+    setTimeout(() => {
+      setLoading(false)
+    }, 1000);
   }, [search])
   
 
   return (
+    loading?<Loading></Loading>:
     <div>
       <div className="container my-5" >
       <div className="row homepage">

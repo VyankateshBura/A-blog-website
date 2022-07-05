@@ -3,14 +3,14 @@ const bcrypt = require('bcryptjs')
 const Post = require('../Models/Post');
 //UPDATE
 const update = async(req,res)=>{
+    console.log(req.body);
     if(req.body.user_id==req.params.id){
         try{
-            
-            const salt = await bcrypt.genSalt(10);
-            req.body.password = await bcrypt.hash(req.body.password,salt);
-            const updateduser = await User.findByIdAndUpdate(req.params.id,{
-                $set:req.body
-            },{new:true});
+            // const salt = await bcrypt.genSalt(10);
+            // req.body.password = await bcrypt.hash(req.body.password,salt);
+            // const updateduser = await User.findByIdAndUpdate(req.params.id,{
+            //     $set:req.body
+            // },{new:true});
             res.status(202).json({msg:"Changes made successfully"});
         }catch(error){
             res.status(500).json({msg:error})

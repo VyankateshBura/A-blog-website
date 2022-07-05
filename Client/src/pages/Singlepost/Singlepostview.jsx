@@ -5,7 +5,7 @@ import {images} from "../../constants"
 import { Link, useLocation } from 'react-router-dom'
 import axios from 'axios';
 
-const Singlepost = () => {
+const Singlepostview = () => {
     const location = useLocation();
     const path = location.pathname.split('/')[2];
     const [post, setPost] = useState({})
@@ -48,4 +48,4 @@ const Singlepost = () => {
   )
 }
 
-export default Singlepost
+export default Singlepostview

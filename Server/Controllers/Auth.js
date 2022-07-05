@@ -1,3 +1,4 @@
+const express = require('express');
 const User = require('../Models/User')
 const {compare} = require('bcryptjs');
 
@@ -15,6 +16,7 @@ const register = async(req,res)=>{
 }
 const login = async(req,res)=>{
     try {
+        console.log(req.body);
         const {Email,password} = req.body;
         if(!Email||!password){
             res.status(500).json({msg:"Please provide a valid email and password"});

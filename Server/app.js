@@ -3,20 +3,33 @@ const cors = require('cors');
 var bodyParser = require('body-parser');
 
 const PORT = 5500;
-const multer = require('multer')
+const multer = require('multer');
+const {GridFsStorage} = require('multer-gridfs-storage');
+const Grid = require('gridfs-stream');
 const app = express();
 const task = require('./Routes/route');
-const connect = require('./db/database')
+const connect = require('./db/database');
+const { default: mongoose } = require('mongoose');
 require('dotenv').config();
 //middleware 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
-// app.use(express.urlencoded({
-//     extended:true
-//     }));
+app.use(express.urlencoded({
+    extended:true
+    }));
 app.use(express.json());//Very much useful without this we can't communicate with the server in json
 
+
+const Mongo_URI = process.env.MONGO_URI;
+
+const conn = mongoose.createConnection(Mongo_URI,{
+    useNewUrlParser:true,
+    useUnifiedTopology:true
+});
+
+//Initialize gfs
+let gfs,gridFsBucket;
 
 //Uploading a file
 ;

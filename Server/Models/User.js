@@ -26,12 +26,7 @@ const UserSchema = new mongoose.Schema({
     },
     password:{
         type:String,
-        // required:[true,"Type your password"],
-        
-    },
-    profilePic:{
-        type:String,
-        default:""
+        // required:[true,"Type your password"]    
     }
 },{timestamps:true})
 UserSchema.methods.createJWT = function(){

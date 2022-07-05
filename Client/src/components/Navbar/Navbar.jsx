@@ -2,12 +2,12 @@ import React from 'react'
 import { Outlet, Link } from "react-router-dom";
 import { images } from '../../constants';
 import "./Navbar.scss";
+import {useLocation} from 'react-router-dom';
 
-const hideit = ()=>{
-
-}
 let user = false;
 const Navbar = () => {
+    let loc = useLocation().state;
+    console.log(loc);
   return (
     <div>
         {/* <h1>Hello, world!</h1>  */}
@@ -43,13 +43,17 @@ const Navbar = () => {
                         </ul>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link mx-3 fs-5" href="./Blogs.html" >Blogs</a>
+                        <Link className="nav-link mx-3 fs-5" to="/blogs">Blogs</Link>
                     </li>
                     </ul>
+                    { loc=="LOGIN_SUCCESS"?<Link to="/settings" state={loc} className="link mx-5"><div className="d-flex justify-content-sm-between">
+                    <i className="bi bi-person-square mx-4" style={{fontSize:"20px",fontFamily:'Roboto',fontStyle:'normal'}}>Username</i>
+                    </div></Link>:   
                     <form className="d-flex " style = {{width:300}}>
+                    
                         <Link className="btn btn-primary btn-lg me-1" to="/signin" role="button">{user?"Sign out":"Sign in"}</Link>
                         <Link className="btn btn-light btn-lg me-1" to="/signup" role="button" >{!user && "Sign up"}</Link>
-                    </form>
+                    </form>}
                 </div>
             </div>
         </nav>
