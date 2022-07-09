@@ -1,0 +1,53 @@
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+    background: #fff;
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+    padding: 30px 0;
+    color: #222222;
+    font-size: 14px;
+  }
+  #footer .credits {
+    font-size: 13px;
+    padding-top: 5px;
+    color: #222222;
+  }
+  #footer .footer-links a {
+    color: #222222;
+    padding-left: 15px;
+  }
+  #footer .footer-links a:first-child {
+    padding-left: 0;
+  }
+  #footer .footer-links a:hover {
+    color: #3498db;
+  }
+
+
+  /*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  transition: all 0.4s;
+}
+.back-to-top i {
+  font-size: 28px;
+  color: #fff;
+  line-height: 0;
+}
+.back-to-top:hover {
+  background: #04090c;
+  color: #fff;
+}
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}

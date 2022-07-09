@@ -11,7 +11,7 @@ router.route('/register').post(register);
 router.route('/login').post(login);
 
 //Acccount controls
-router.route('/:id').put(update);
+
 router.route('/:id').delete(Delete);
 router.route('/:id').get(getuser);
 

@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './components/Navbar/Navbar'
 import {BrowserRouter,Routes,Route,Link,useLocation} from "react-router-dom";
 import {Home,About,Signin,Signup,Singlepostview,Singlepostedit,Write,Settings,Blogs} from './pages'
+import Footer from './components/Footer/Footer'
 
 let user = false;
 
@@ -22,6 +23,7 @@ const App = () => {
           <Route exact path='/write' element = {<Write/>}/>
           <Route exact path='/settings' element = {<Settings/>}/>
         </Routes>
+        <Footer/>
       </BrowserRouter>
       
     </div>
