@@ -5,7 +5,7 @@ const path = require('path');
 const jwt = require('jsonwebtoken');
 var bodyParser = require('body-parser');
 const crypto = require('crypto')
-const PORT = 5500;
+
 const multer = require('multer');
 const {GridFsStorage} = require('multer-gridfs-storage');
 const Grid = require('gridfs-stream');
@@ -14,6 +14,10 @@ const task = require('./Routes/route');
 const connect = require('./db/database');
 const { default: mongoose } = require('mongoose');
 require('dotenv').config();
+
+
+const PORT = process.env.PORT || 5500;
+
 //middleware 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));

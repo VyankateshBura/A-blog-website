@@ -17,7 +17,7 @@ const Signin = () => {
         console.log(password);
         // dispatch({type:"LOGIN_START"});
         try {
-            const res = await axios.post('http://localhost:5500/api/v1/login',{
+            const res = await axios.post('/api/v1/login',{
                 Email:email,
                 password:password
             })

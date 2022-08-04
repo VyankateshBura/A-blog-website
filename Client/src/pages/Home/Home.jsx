@@ -14,7 +14,7 @@ const Home = () => {
   const {search} = useLocation();
 
   const fetchposts = async()=>{
-    const {data} = await axios.get("http://localhost:5500/api/v1/post/getAllpost/"+search);
+    const {data} = await axios.get("/api/v1/post/getAllpost/"+search);
     setPosts(data);      
   }
   useEffect(() => {

@@ -13,7 +13,7 @@ const Singlepostedit = () => {
     useEffect(() => {
 
         const getPost = async()=>{
-            const res = await axios.get("http://localhost:5500/api/v1/post/getpost/"+path);
+            const res = await axios.get("/api/v1/post/getpost/"+path);
             setPost(res.data);
         }
         getPost();
